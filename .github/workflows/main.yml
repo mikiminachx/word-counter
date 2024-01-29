@@ -8,6 +8,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Deploy to GitHub Pages
+        run: gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
