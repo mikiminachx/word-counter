@@ -8,9 +8,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Set Remote URL
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -19,4 +16,3 @@ jobs:
       - run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          GITHUB_REPOSITORY: word-counter
