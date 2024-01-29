@@ -8,8 +8,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Install gh-pages
+        run: npm install gh-pages
+
       - name: Deploy to GitHub Pages
         run: gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+        
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
