@@ -1,0 +1,23 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install gh-pages
+        run: npm install gh-pages
+
+      - uses: actions/checkout@v3
+      - run: git config --global user.email "dezmeko@icloud.com"
+      - run: git config --global user.name "mikiminachx"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
