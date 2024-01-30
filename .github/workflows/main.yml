@@ -12,8 +12,8 @@ jobs:
         run: npm install gh-pages
 
       - uses: actions/checkout@v3
-      - run: git config --global user.email "you@example.com"
-      - run: git config --global user.name "Your Name"
+      - run: git config --global user.email "dezmeko@icloud.com"
+      - run: git config --global user.name "mikiminachx"
       - uses: actions/setup-node@v3
         with:
           node-version: 16
