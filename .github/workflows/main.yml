@@ -11,12 +11,6 @@ jobs:
       - name: Install gh-pages
         run: npm install gh-pages
 
-      - name: Check gh-pages
-        run: gh-pages --version
-
-      - name: Deploy to GitHub Pages
-        run: npm exec --prefix . gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
-
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
